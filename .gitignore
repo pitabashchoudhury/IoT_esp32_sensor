@@ -5,3 +5,6 @@
 *.elf
 *.bin
 *.hex
+
+# Dev simulator build artifacts
+arduino-dev-simulator/.pio

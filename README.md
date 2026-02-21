@@ -7,6 +7,7 @@ Arduino firmware for ESP32 that reads sensor data and communicates with the **io
 ## Table of Contents
 
 - [Architecture Overview](#architecture-overview)
+- [Arduino Dev Simulator](#arduino-dev-simulator)
 - [System Flow Diagram](#system-flow-diagram)
 - [Sequence Diagrams](#sequence-diagrams)
   - [1. Boot & Connection](#1-boot--connection)
@@ -19,6 +20,14 @@ Arduino firmware for ESP32 that reads sensor data and communicates with the **io
 - [Hardware Setup](#hardware-setup)
 - [Configuration](#configuration)
 - [Build & Flash](#build--flash)
+
+---
+
+## Arduino Dev Simulator
+
+> **Don't have an ESP32 or sensors?** Use the [`arduino-dev-simulator/`](arduino-dev-simulator/) folder to publish **simulated random sensor data** via MQTT using an **Arduino Mega + Ethernet Shield**. Same MQTT topics, same JSON format — perfect for backend and mobile app development.
+>
+> See the full setup guide: **[arduino-dev-simulator/README.md](arduino-dev-simulator/README.md)**
 
 ---
 
