@@ -20,8 +20,9 @@
 #include "config.h"
 
 // ── Networking ──────────────────────────────────────────────
+// WiFiSSLClient provides TLS encryption (required by HiveMQ Cloud)
 
-WiFiClient wifiClient;
+WiFiSSLClient wifiClient;
 PubSubClient mqttClient(wifiClient);
 
 // ── MQTT Topics ─────────────────────────────────────────────
@@ -148,20 +149,12 @@ bool mqttConnect() {
     Serial.print(clientId);
     Serial.println("...");
 
-    bool ok;
-    if (strlen(MQTT_USERNAME) > 0) {
-        ok = mqttClient.connect(
-            clientId.c_str(),
-            MQTT_USERNAME, MQTT_PASSWORD_STR,
-            topicStatus.c_str(), MQTT_QOS, true,
-            "{\"is_online\":false}");
-    } else {
-        ok = mqttClient.connect(
-            clientId.c_str(),
-            nullptr, nullptr,
-            topicStatus.c_str(), MQTT_QOS, true,
-            "{\"is_online\":false}");
-    }
+    // HiveMQ Cloud requires username + password
+    bool ok = mqttClient.connect(
+        clientId.c_str(),
+        MQTT_USERNAME, MQTT_PASSWORD_STR,
+        topicStatus.c_str(), MQTT_QOS, true,
+        "{\"is_online\":false}");
 
     if (ok) {
         Serial.println("[MQTT] Connected!");

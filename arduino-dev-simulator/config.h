@@ -8,18 +8,16 @@
 #define WIFI_PASSWORD      "YOUR_WIFI_PASSWORD"
 
 // ============================================================
-//  MQTT Broker Configuration
-//  Must match iot-backend device-service application.yml
+//  HiveMQ Cloud Broker Configuration
+//  Get these from your HiveMQ Cloud dashboard
 // ============================================================
-#define MQTT_BROKER        "broker.hivemq.com"
-#define MQTT_PORT          1883
+#define MQTT_BROKER        "YOUR_CLUSTER_ID.s1.eu.hivemq.cloud"  // your HiveMQ Cloud URL
+#define MQTT_PORT          8883                                    // TLS port (required by HiveMQ Cloud)
+#define MQTT_USERNAME      "YOUR_HIVEMQ_USERNAME"                  // set in HiveMQ Cloud credentials
+#define MQTT_PASSWORD_STR  "YOUR_HIVEMQ_PASSWORD"                  // set in HiveMQ Cloud credentials
 #define MQTT_CLIENT_PREFIX "iot_dev_sim_"
 #define MQTT_QOS           1
 #define MQTT_RETRY_DELAY   5000     // ms between reconnect attempts
-
-// Optional: If using authenticated broker
-#define MQTT_USERNAME      ""
-#define MQTT_PASSWORD_STR  ""
 
 // ============================================================
 //  Device Configuration
