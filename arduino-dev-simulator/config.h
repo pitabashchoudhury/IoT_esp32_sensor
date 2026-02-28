@@ -2,21 +2,10 @@
 #define CONFIG_H
 
 // ============================================================
-//  Ethernet Configuration
+//  WiFi Configuration (Arduino UNO WiFi R4)
 // ============================================================
-// MAC address – must be unique on your LAN
-// Change last byte if running multiple simulators
-#define MAC_ADDRESS        { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0x01 }
-
-// true = get IP from router via DHCP (recommended)
-// false = use the static IP below
-#define USE_DHCP           true
-
-// Static IP (only used when USE_DHCP is false)
-#define STATIC_IP          192, 168, 1, 100
-#define GATEWAY_IP         192, 168, 1, 1
-#define SUBNET_MASK        255, 255, 255, 0
-#define DNS_SERVER         8, 8, 8, 8
+#define WIFI_SSID          "YOUR_WIFI_SSID"
+#define WIFI_PASSWORD      "YOUR_WIFI_PASSWORD"
 
 // ============================================================
 //  MQTT Broker Configuration
@@ -30,7 +19,7 @@
 
 // Optional: If using authenticated broker
 #define MQTT_USERNAME      ""
-#define MQTT_PASSWORD      ""
+#define MQTT_PASSWORD_STR  ""
 
 // ============================================================
 //  Device Configuration
@@ -82,9 +71,9 @@
 #define LIGHT_STEP         100
 
 // ============================================================
-//  LED Indicator (built-in LED on Arduino pin 13)
+//  LED Indicator (built-in LED on Arduino UNO R4)
 // ============================================================
-#define LED_PIN            13
+#define LED_PIN            LED_BUILTIN
 #define LED_ENABLED        true
 
 #endif // CONFIG_H
